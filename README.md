@@ -1,4 +1,4 @@
-# Cara mengatasinya adalah dengan menurunkan level logging, yang dapat dilakukan seperti ini pada sistem dengan systemd:
+# systemd :
 
 cp /lib/systemd/system/snmpd.service /etc/systemd/system/snmpd.service
 
@@ -8,7 +8,7 @@ systemctl daemon-reload
 
 systemctl restart snmpd
 
-# Pada sistem tanpa systemd, level logging diatur oleh skrip init (kecuali dikonfigurasi secara eksplisit di /etc/default/snmpd), dan dapat diubah seperti ini:
+# Tanpa systemd :
 
 sed -i 's/Lsd/LS6d/g' /etc/default/snmpd
 
